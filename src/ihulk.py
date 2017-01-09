@@ -119,8 +119,6 @@ def httpcall(url):
         sys.exit()
     else:
         urlopen(request)
-        inc_counter()
-
     return(response_code)
 
 
