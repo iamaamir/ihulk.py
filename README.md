@@ -14,3 +14,7 @@ you can add "safe" after url, to autoshut after dos
 ---
 # Note:
 The tool is meant for educational purposes only, and should not be used for malicious activity of any kind.
+
+
+# Todo
+fix for EOF occurred in violation of protocol (_ssl.c:600)
