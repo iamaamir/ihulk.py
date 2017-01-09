@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------------------------
 # IHULK - Improved HTTP Unbearable Load King
 #
