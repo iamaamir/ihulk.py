@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------------------------
 # IHULK - Improved HTTP Unbearable Load King
+# version - 1.0
 #
-# this tool is a dos tool that is meant to put heavy load on HTTP servers in order to bring them
-# to their knees by exhausting the resource pool, its is meant for research purposes only
+# this tool is a Dos tool
+# that is meant to put heavy load on HTTP servers in order to bring them
+# to their knees by exhausting the resource pool,
+# its is meant for research purposes only
 # and any malicious usage of this tool is prohibited.
 #
-# orginal author :  Barry Shteiman , version 1.0
-# edited and maintained by : Aamir khan
+# orginal author :  Barry Shteiman
+# edited and maintain by : Aamir khan
 # ----------------------------------------------------------------------------------------------
 
 from urllib.request import Request, urlopen, HTTPError, URLError
@@ -111,7 +114,6 @@ def httpcall(url):
         inc_counter()
     except HTTPError as e:
         set_flag(1)
-        print(e.reason)
         print('Response code 500')
         response_code = 500
     except URLError as e:
